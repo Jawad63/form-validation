@@ -14,8 +14,8 @@ body {
 
 .container {
     border: 3px solid gray;
-    width: 450px;
-    height: 800px;
+    width: 470px;
+    height: 900px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -43,8 +43,7 @@ body {
     }
 
 
-    .form {
-
+    .radio__holder {
         margin: 0 2rem;
 
         .radio {
@@ -88,8 +87,129 @@ body {
 
     }
 
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-row-gap: 1rem;
+        padding: 1rem 2rem;
+        grid-template-areas: 
+        
+        "one two"
+        "three three"
+        "four four"
+        "five five"
+        "six seven"
+        "eight nine"
+        "ten ten"
+        "eleven eleven"
+        ;
 
+        input {
+            border: 1.3px solid $dark;
+            padding: 8px;
+            border-radius: 4px;
+        }
 
+        input::placeholder {
+            font-size: 10px;
+        }
+
+        .item-one {
+            grid-area: one;
+        }
+
+        .item-two {
+            grid-area: two;
+        }
+
+        .item-three {
+            grid-area: three;
+
+            input {
+                width: 90%;
+            }
+        }
+
+        .item-four {
+            grid-area: four;
+
+            input {
+                width: 90%;
+            }
+        }
+
+        .item-five {
+            grid-area: five;
+
+            input {
+                width: 90%;
+            }
+        }
+
+        .item-six {
+            grid-area: six;
+        }
+
+        
+        .item-seven {
+            grid-area: seven;
+        }
+
+        
+        .item-eight {
+            grid-area: eight;
+        }
+
+        
+        .item-nine {
+            grid-area: nine;
+        }
+
+        .item-ten {
+            grid-area: ten;
+
+            input {
+                width: 90%;
+            }
+        }
+
+        .item-eleven {
+            grid-area: eleven;
+            display: inline-flex;
+            font-size: 11px;
+            font-weight: 500;
+
+            .checkbox {
+                height: 1em;
+                width: 1em;
+            }
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        p {
+            background-color: $red;
+            padding: 0.5rem 2rem;
+            color: $white;
+            border-radius: 4px;
+        }
+    }
+
+    .footer__image {
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .image {
+            width: 470px;
+            height: 245px;
+            background-size: cover;
+        }
+    }
 
 }
 
