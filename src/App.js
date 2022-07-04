@@ -1,4 +1,6 @@
-import './css/style.css'
+import './css/style.css';
+import Form from './components/Form';
+import SignUpForm from './components/SignUpForm';
 
 function App() {
 
@@ -6,8 +8,9 @@ function App() {
 
 
   return (
-    <div className="Container">
-
+    <div>
+      <Form />
+      <SignUpForm />
     </div>
   );
 }
