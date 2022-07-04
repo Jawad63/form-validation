@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 $red: #e31d3c;
 $grey: #eee;
@@ -6,39 +6,93 @@ $white: #fff;
 $dark: #242324 ;
 
 body {
-    background-color: $dark;
+    background-color: $white;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
 
-
-
-
-
-
 .container {
-    border: 2px solid $grey;
-    height: 600px;
-    width: 450px;
+    border: 3px solid gray;
+    height: 750px;
+    width: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 
+    .img {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 1rem 1rem 0 0;
+        height: 50px;
+        width: auto;
+    }
+
 }
 
 .wrapper {
-    padding: 2rem;
+    margin: 0 1.5rem 0 1.5rem;
 
-    h2 {
+    .heading {
         text-align: center;
         text-transform: uppercase;
         color: $red;
         letter-spacing: 1px;
+        font-weight: 900;
+        font-size: 33px;
+        margin: 5px 0px;
 
         span {
             font-style: italic;
         }
     }
+
+    .form {
+        margin: 0 1.2rem 0 1.2rem;
+
+        .input-box {
+            display: flex;
+            flex-direction: row;
+
+            
+            input {
+                border: 1px solid black;
+                border-radius: 4px;
+                height: 30px;
+                margin: 10px;
+                width: 40%;
+            }
+
+            p {
+                color: black;
+                font-size: 12px;
+                text-align: left;
+                
+            }
+        }
+
+        input {
+            border: 1px solid black;
+            border-radius: 4px;
+            height: 30px;
+            margin: 10px;
+            width: 87%;
+            
+        }
+
+        input::placeholder {
+            color: black;
+            padding-left: 10px;
+        }
+
+
+
+    }
+
+
+
+
+
 }
