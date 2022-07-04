@@ -4,46 +4,33 @@ import logo from '../images/logo.png';
 const SignUpForm = () => {
     return (
         <div className="container">
+
             <div className="img">
                 <img src={logo} />
             </div>
-            <div className="wrapper">
-                <p className="heading"><span>vul uw</span> gegevens aan</p>
 
-                <div className="form">
-                    <div className="input-box">
-                        <input type="name" placeholder="Voornaam" />
-                        <input type="name" placeholder="Naam" />
-                    </div>
+            <h1><span className="italic-text">vul uw</span> gegevens aan</h1>
 
-                    <input type="name" placeholder="Nummerplaat" />
-                    <br />
-                    <input type="name" placeholder="Email" />
-                    <br />
-                    <input type="name" placeholder="Straat" />
+            <div className="form">
 
-                    <div className="input-box">
-                        <input type="name" placeholder="Nummer" />
-                        <input type="name" placeholder="Bus" />
-                    </div>
+                <label htmlFor="myRadioIdOne" className="radio">
+                    <input type="radio" id="myRadioIdOne" className="radio__input" name=""/>
+                    <div className="radio__radio"></div>
+                    Dhr.
+                </label>
 
-                    <div className="input-box">
-                        <input type="name" placeholder="Stad" />
-                        <input type="name" placeholder="Postcode" />
-                    </div>
-
-                    <input className="input" type="name" placeholder="Telefoon" />
-                    <br />
-                    
-                    <div className="input-box">
-                        <input type="checkbox" />
-                        <p>Hou mij op de hoogte wanneer er interessante acties zijn bij Q Team.</p>
-                    </div>
-                </div>
-
-
+                <label htmlFor="myRadioIdTwo" className="radio">
+                    <input type="radio" id="myRadioIdTwo" className="radio__input" name=""/>
+                    <div className="radio__radio"></div>
+                    Mevr.
+                </label>
 
             </div>
+
+
+
+
+
 
         </div>
     )
