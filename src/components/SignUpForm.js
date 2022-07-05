@@ -28,69 +28,49 @@ const SignUpForm = () => {
                 
             </div>
 
-            <div className="grid-container">
-                <div className="item-one">
+            <div className="flex__container">
+                <div className="flex__row">
                     <input type="text" placeholder="Voornaam" />
-                </div>
-
-                <div className="item-two">
                     <input type="text" placeholder="Naam" />
                 </div>
 
                 
-                <div className="item-three">
-                    <input type="text" placeholder="Nummerplaat" />
-                </div>
+                <input type="text" placeholder="Nummerplaat" />
 
-                <div className="item-four">
-                    <input type="email" placeholder="Email" />
-                </div>
-
+                <input type="email" placeholder="Email" />
                 
-                <div className="item-five">
-                    <input type="text" placeholder="Straat" />
-                </div>
+                <input type="text" placeholder="Straat" />
 
-                <div className="item-six">
+
+                <div className="flex__row">
                     <input type="text" placeholder="Nummer" />
-                </div>
-
-                <div className="item-seven">
                     <input type="text" placeholder="Bus" />
                 </div>
 
 
-                <div className="item-eight">
+                <div className="flex__row">
                     <input type="text" placeholder="Stad" />
-                </div>
-
-                <div className="item-nine">
                     <input type="text" placeholder="Postcode" />
                 </div>
 
-                <div className="item-ten">
-                    <input type="text" placeholder="Telefoon" />
+                <input type="text" placeholder="Telefoon" />
+
+
+                <div className="flex__checkbox">
+                    <input type="checkbox" className="checkbox"/>
+                    <p>Hou mij op de hoogte wanneer er interessante acties zijn bij Q Team.</p>  
                 </div>
 
-                <div className="item-eleven">
-                    <input type="checkbox" className="checkbox"/>
-                    Hou mij op de hoogte wanneer er interessante acties zijn bij Q Team.
-                </div>
             </div>
 
             <div className="btn">
                 <p>Bevestigen</p>
             </div>
+            
 
             <div className="footer__image">
                 <img src={footerImage} className="image" alt="" />
             </div>
-
-
-
-
-
-
 
         </div>
     )

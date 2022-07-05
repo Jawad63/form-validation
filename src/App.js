@@ -4,9 +4,6 @@ import SignUpForm from './components/SignUpForm';
 
 function App() {
 
-
-
-
   return (
     <div>
       <Form />

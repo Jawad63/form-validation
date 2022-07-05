@@ -14,12 +14,10 @@ body {
 
 .container {
     border: 3px solid gray;
-    width: 470px;
-    height: 900px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: auto;
+    max-width: 550px;
+    width: auto;
+    margin: auto;
 
 
     .img {
@@ -35,16 +33,18 @@ body {
         color: $red;
         text-transform: uppercase;
         text-align: center;
+        font-size: 40px;
 
         .italic-text {
             font-style: italic;
+            font-weight: 900;
         }
 
     }
 
 
     .radio__holder {
-        margin: 0 2rem;
+        margin: 0 2.3rem;
 
         .radio {
             display: inline-flex;
@@ -87,105 +87,43 @@ body {
 
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-row-gap: 1rem;
-        padding: 1rem 2rem;
-        grid-template-areas: 
-        
-        "one two"
-        "three three"
-        "four four"
-        "five five"
-        "six seven"
-        "eight nine"
-        "ten ten"
-        "eleven eleven"
-        ;
+    .flex__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 2rem;
+
+        .flex__row {
+            display: flex;
+            flex-direction: row;
+            gap: 3.5rem;
+        }
 
         input {
-            border: 1.3px solid $dark;
-            padding: 8px;
+            padding: 10px;
             border-radius: 4px;
+            width: 80%;    
+            margin: 5px;        
         }
 
-        input::placeholder {
-            font-size: 10px;
-        }
-
-        .item-one {
-            grid-area: one;
-        }
-
-        .item-two {
-            grid-area: two;
-        }
-
-        .item-three {
-            grid-area: three;
-
-            input {
-                width: 90%;
-            }
-        }
-
-        .item-four {
-            grid-area: four;
-
-            input {
-                width: 90%;
-            }
-        }
-
-        .item-five {
-            grid-area: five;
-
-            input {
-                width: 90%;
-            }
-        }
-
-        .item-six {
-            grid-area: six;
-        }
-
-        
-        .item-seven {
-            grid-area: seven;
-        }
-
-        
-        .item-eight {
-            grid-area: eight;
-        }
-
-        
-        .item-nine {
-            grid-area: nine;
-        }
-
-        .item-ten {
-            grid-area: ten;
-
-            input {
-                width: 90%;
-            }
-        }
-
-        .item-eleven {
-            grid-area: eleven;
-            display: inline-flex;
-            font-size: 11px;
-            font-weight: 500;
-
+        .flex__checkbox {
+            display: flex;
+            flex-direction: row;
+            
             .checkbox {
-                height: 1em;
-                width: 1em;
+                width: 20px;
+                height: 20px;
+            }
+
+            p {
+                margin: 5px;
+                font-size: 13px;
+                font-weight: 600;
             }
         }
     }
+
 
     .btn {
         display: flex;
@@ -200,16 +138,19 @@ body {
         }
     }
 
+
     .footer__image {
-        background-size: cover;
-        background-repeat: no-repeat;
+        max-width: 550px;
+        width: auto;
+        max-height: 990px;
+        height: 200px;
 
         .image {
-            width: 470px;
-            height: 245px;
-            background-size: cover;
+            width: 100%;
+            height: 100%;
         }
     }
+
 
 }
 
