@@ -1,9 +1,135 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import logo from '../images/logo.png';
 import footerImage from '../images/Image.png';
 
 const SignUpForm = () => {
+
+    const initialValues = {
+        firstname: "",
+        lastname: "",
+        numberplate: "",
+        email: "",
+        street: "",
+        number: "",
+        bus: "",
+        city: "",
+        postcode: "",
+        telephone: "",
+    };
+
+    const [formValues, setFormValues] = useState(initialValues);
+    const [formError, setFormError] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+
+
+
+    const handleChange = (e) => {
+        const { name, value} = e.target;
+        setFormValues({ ...formValues, [name]: value });
+        console.log(formValues);
+    };
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormError(validate(formValues));
+        setIsSubmit = true;
+    }
+
+    useEffect (() => {
+        console.log(formError);
+        if (Object.keys(formError).length === 0 && isSubmit) {
+            console.log(formValues);
+        }
+    }, [formError]);
+
+
+
+
+    // function that validates the values: 
+    const validate = (values) => {
+        const errors = {}
+        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
+
+        if (!values.firstname) {
+            errors.firstname = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.firstname = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.lastname) {
+            errors.lastname = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.lastname = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.numberplate) {
+            errors.numberplate = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.numberplate = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.email) {
+            errors.email = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else if (!regex.test(values.email)) {
+            errors.email = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.email = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.street) {
+            errors.street = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.street = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.number) {
+            errors.number = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.number = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.bus) {
+            errors.bus = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.bus = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.city) {
+            errors.city = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.city = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.postcode) {
+            errors.postcode = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.postcode = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        if (!values.telephone) {
+            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else if (values.telephone.length < 10) {
+            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else if (values.telephone.length > 13) {
+            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+        } else {
+            errors.telephone = (<i class="fa-solid fa-circle-check"></i>);
+        }
+
+        return errors;
+    };
+
+
+
+
+
     return (
+
+        <><></><pre>{ JSON.stringify(formValues, undefined, 2)}</pre>
+        
         <div className="container">
 
             <div className="img">
@@ -14,65 +140,95 @@ const SignUpForm = () => {
 
             <div className="radio__holder">
 
-                <label htmlFor="myRadioIdOne" className="radio">
-                    <input type="radio" id="myRadioIdOne" className="radio__input" name=""/>
-                    <div className="radio__radio"></div>
-                    Dhr.
-                </label>
+            <label htmlFor="myRadioIdOne" className="radio">
+                <input type="radio" id="myRadioIdOne" className="radio__input" name=""/>
+                <div className="radio__radio"></div>
+                Dhr.
+            </label>
 
-                <label htmlFor="myRadioIdTwo" className="radio">
-                    <input type="radio" id="myRadioIdTwo" className="radio__input" name=""/>
-                    <div className="radio__radio"></div>
-                    Mevr.
-                </label>
-                
-            </div>
-
-            <div className="flex__container">
-                <div className="flex__row">
-                    <input type="text" placeholder="Voornaam" />
-                    <input type="text" placeholder="Naam" />
-                </div>
-
-                
-                <input type="text" placeholder="Nummerplaat" />
-
-                <input type="email" placeholder="Email" />
-                
-                <input type="text" placeholder="Straat" />
-
-
-                <div className="flex__row">
-                    <input type="text" placeholder="Nummer" />
-                    <input type="text" placeholder="Bus" />
-                </div>
-
-
-                <div className="flex__row">
-                    <input type="text" placeholder="Stad" />
-                    <input type="text" placeholder="Postcode" />
-                </div>
-
-                <input type="text" placeholder="Telefoon" />
-
-
-                <div className="flex__checkbox">
-                    <input type="checkbox" className="checkbox"/>
-                    <p>Hou mij op de hoogte wanneer er interessante acties zijn bij Q Team.</p>  
-                </div>
-
-            </div>
-
-            <div className="btn">
-                <p>Bevestigen</p>
-            </div>
+            <label htmlFor="myRadioIdTwo" className="radio">
+                <input type="radio" id="myRadioIdTwo" className="radio__input" name=""/>
+                <div className="radio__radio"></div>
+                Mevr.
+            </label>
             
+            </div>
+
+
+            <form onSubmit={handleSubmit}>
+
+                <div className="flex__container">
+
+                    <div className="flex__row">
+                        <input placeholder="Voornaam" name="firstname" value={formValues.firstname} onChange={handleChange} />
+                        <i>{formError.firstname}</i>
+                        <input placeholder="Naam" name="lastname" value={formValues.lastname} onChange={handleChange} />
+                        <i>{formError.lastname}</i>
+                    </div>
+
+
+                    <div className="flex__line">
+                        <input placeholder="Nummerplaat" name="numberplate" value={formValues.numberplate} onChange={handleChange}/>
+                        <i>{formError.numberplate}</i>
+                    </div>
+
+                    <div className="flex__line">
+                        <input type="email" placeholder="Email" name="email" value={formValues.email} onChange={handleChange} />
+                        <i>{formError.email}</i>
+                    </div>
+
+
+                    <div className="flex__line">
+                        <input placeholder="Straat" name="street" value={formValues.street} onChange={handleChange}/>
+                        <i>{formError.street}</i>
+                    </div>
+
+
+                    <div className="flex__row">
+                        <input placeholder="Nummer" name="number" value={formValues.number} onChange={handleChange} />
+                        <i>{formError.number}</i>
+                        <input placeholder="Bus" name="bus" value={formValues.bus} onChange={handleChange} />
+                        <i>{formError.bus}</i>
+                    </div>
+
+
+                    <div className="flex__row">
+                        <input placeholder="Stad" name="city" value={formValues.city} onChange={handleChange}/>
+                        <i>{formError.city}</i>
+                        <input placeholder="Postcode" name="postcode"  value={formValues.postcode} onChange={handleChange}/>
+                        <i>{formError.postcode}</i>
+                    </div>
+
+                    <div className="flex__line">
+                        <input placeholder="Telefoon" name="telephone" value={formValues.telephone} onChange={handleChange}/>
+                        <i>{formError.telephone}</i>
+                    </div>
+
+
+                    <div className="flex__checkbox">
+                        <input type="checkbox" className="checkbox" />
+                        <p>Hou mij op de hoogte wanneer er interessante acties zijn bij Q Team.</p>
+                    </div>
+
+
+                    <div className="btn">
+                        <button type="submit">Bevestigen</button>
+                    </div>
+
+                </div>
+
+
+
+            </form>
+
+
+
 
             <div className="footer__image">
                 <img src={footerImage} className="image" alt="" />
             </div>
 
-        </div>
+        </div></>
     )
 }
 
