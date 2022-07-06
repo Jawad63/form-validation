@@ -27,7 +27,7 @@ const SignUpForm = () => {
     const handleChange = (e) => {
         const { name, value} = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
+        // console.log(formValues);
     };
 
 
@@ -41,7 +41,7 @@ const SignUpForm = () => {
     useEffect (() => {
         console.log(formError);
         if (Object.keys(formError).length === 0 && isSubmit) {
-            console.log(formValues);
+            // console.log(formValues);
         }
     }, [formError]);
 
@@ -159,12 +159,18 @@ const SignUpForm = () => {
 
                 <div className="flex__container">
 
-                    <div className="flex__row">
-                        <input placeholder="Voornaam" name="firstname" value={formValues.firstname} onChange={handleChange} />
-                        <i>{formError.firstname}</i>
-                        <input placeholder="Naam" name="lastname" value={formValues.lastname} onChange={handleChange} />
-                        <i>{formError.lastname}</i>
+                    <div className="row">
+                        <div className="flex__row">
+                            <input placeholder="Voornaam" name="firstname" value={formValues.firstname} onChange={handleChange} />
+                            <i>{formError.firstname}</i>
+                        </div>
+
+                        <div className="flex__row">
+                            <input placeholder="Naam" name="lastname" value={formValues.lastname} onChange={handleChange} />
+                            <i>{formError.lastname}</i>
+                        </div>
                     </div>
+
 
 
                     <div className="flex__line">
@@ -183,21 +189,30 @@ const SignUpForm = () => {
                         <i>{formError.street}</i>
                     </div>
 
+                    <div className="row">
+                        <div className="flex__row">
+                            <input placeholder="Nummer" name="number" value={formValues.number} onChange={handleChange} />
+                            <i>{formError.number}</i>
+                        </div>
+                        <div className="flex__row">
+                            <input placeholder="Bus" name="bus" value={formValues.bus} onChange={handleChange} />
+                            <i>{formError.bus}</i>
+                        </div>
+                    </div>
+                    
 
-                    <div className="flex__row">
-                        <input placeholder="Nummer" name="number" value={formValues.number} onChange={handleChange} />
-                        <i>{formError.number}</i>
-                        <input placeholder="Bus" name="bus" value={formValues.bus} onChange={handleChange} />
-                        <i>{formError.bus}</i>
+                    <div className="row">
+                        <div className="flex__row">
+                            <input placeholder="Stad" name="city" value={formValues.city} onChange={handleChange}/>
+                            <i>{formError.city}</i>
+                        </div>
+                        <div className="flex__row">
+                            <input placeholder="Postcode" name="postcode"  value={formValues.postcode} onChange={handleChange}/>
+                            <i>{formError.postcode}</i>
+                        </div>
                     </div>
 
 
-                    <div className="flex__row">
-                        <input placeholder="Stad" name="city" value={formValues.city} onChange={handleChange}/>
-                        <i>{formError.city}</i>
-                        <input placeholder="Postcode" name="postcode"  value={formValues.postcode} onChange={handleChange}/>
-                        <i>{formError.postcode}</i>
-                    </div>
 
                     <div className="flex__line">
                         <input placeholder="Telefoon" name="telephone" value={formValues.telephone} onChange={handleChange}/>
