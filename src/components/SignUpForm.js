@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logo from '../images/logo.png';
 import footerImage from '../images/Image.png';
 
@@ -20,103 +20,90 @@ const SignUpForm = () => {
 
     const [formValues, setFormValues] = useState(initialValues);
     const [formError, setFormError] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-
-
-
+     
     const handleChange = (e) => {
         const { name, value} = e.target;
-        setFormValues({ ...formValues, [name]: value });
-        // console.log(formValues);
+        setFormValues({ ...formValues, [name]:value });
+        console.log(formValues);
     };
-
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormError(validate(formValues));
-        setIsSubmit = true;
     }
 
-    useEffect (() => {
-        console.log(formError);
-        if (Object.keys(formError).length === 0 && isSubmit) {
-            // console.log(formValues);
-        }
-    }, [formError]);
-
-
-
+    
 
     // function that validates the values: 
     const validate = (values) => {
-        const errors = {}
+        const errors = {};
         const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 
         if (!values.firstname) {
-            errors.firstname = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.firstname = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.firstname = (<i class="fa-solid fa-circle-check"></i>);
+            errors.firstname = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.lastname) {
-            errors.lastname = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.lastname = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.lastname = (<i class="fa-solid fa-circle-check"></i>);
+            errors.lastname = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.numberplate) {
-            errors.numberplate = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.numberplate = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.numberplate = (<i class="fa-solid fa-circle-check"></i>);
+            errors.numberplate = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.email) {
-            errors.email = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.email = (<i className="fa-solid fa-circle-xmark"></i>);
         } else if (!regex.test(values.email)) {
-            errors.email = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.email = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.email = (<i class="fa-solid fa-circle-check"></i>);
+            errors.email = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.street) {
-            errors.street = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.street = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.street = (<i class="fa-solid fa-circle-check"></i>);
+            errors.street = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.number) {
-            errors.number = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.number = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.number = (<i class="fa-solid fa-circle-check"></i>);
+            errors.number = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.bus) {
-            errors.bus = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.bus = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.bus = (<i class="fa-solid fa-circle-check"></i>);
+            errors.bus = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.city) {
-            errors.city = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.city = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.city = (<i class="fa-solid fa-circle-check"></i>);
+            errors.city = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.postcode) {
-            errors.postcode = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.postcode = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.postcode = (<i class="fa-solid fa-circle-check"></i>);
+            errors.postcode = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         if (!values.telephone) {
-            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.telephone = (<i className="fa-solid fa-circle-xmark"></i>);
         } else if (values.telephone.length < 10) {
-            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.telephone = (<i className="fa-solid fa-circle-xmark"></i>);
         } else if (values.telephone.length > 13) {
-            errors.telephone = (<i class="fa-solid fa-circle-xmark"></i>);
+            errors.telephone = (<i className="fa-solid fa-circle-xmark"></i>);
         } else {
-            errors.telephone = (<i class="fa-solid fa-circle-check"></i>);
+            errors.telephone = (<i className="fa-solid fa-circle-check"></i>);
         }
 
         return errors;
