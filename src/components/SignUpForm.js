@@ -28,13 +28,13 @@ const SignUpForm = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]:value });
-        console.log(formValues);
     };
 
     // This is to validate the form:
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormError(validate(formValues));
+        console.log(formValues);
     }
 
 
