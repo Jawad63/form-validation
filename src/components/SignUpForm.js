@@ -5,6 +5,7 @@ import footerImage from '../images/Image.png';
 
 const SignUpForm = () => {
 
+    // Object with empty values that will be getting updated through formValues. 
     const initialValues = {
         firstname: "",
         lastname: "",
@@ -18,22 +19,25 @@ const SignUpForm = () => {
         telephone: "",
     };
 
+    // To bind the all the Input fields with 
     const [formValues, setFormValues] = useState(initialValues);
     const [formError, setFormError] = useState({});
      
+
+    // This is going to Update the values of Input field:
     const handleChange = (e) => {
-        const { name, value} = e.target;
+        const { name, value } = e.target;
         setFormValues({ ...formValues, [name]:value });
         console.log(formValues);
     };
 
-
+    // This is to validate the form:
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormError(validate(formValues));
     }
 
-    
+
 
     // function that validates the values: 
     const validate = (values) => {

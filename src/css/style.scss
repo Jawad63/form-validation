@@ -167,8 +167,7 @@ body {
 
         .btn {
             margin: auto;
-            cursor: pointer;
-    
+                
             button {
                 background-color: $red;
                 padding: 0.5rem 2rem;
@@ -176,6 +175,7 @@ body {
                 color: $white;
                 border-radius: 4px;
                 border: none;
+                cursor: pointer;
             }
         }
     }
@@ -196,7 +196,7 @@ body {
 
 ////////////// Media Queries //////////////
  
-// Tablet Version: 
+// Tablet / Mobile Version: 
 @media only screen and (max-width: 400px) {
     
     .container {
